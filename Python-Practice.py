@@ -314,3 +314,110 @@ print(new_str)
 ask_string = "hello guys my name is dev shah"
 new_str = ask_string.split()
 print(' '.join(new_str[::-1]))
+
+# 16. Password generator
+
+
+def pwd(size, chars):
+    print(''.join(random.sample(chars, size)))
+
+
+pwd(size=8, chars=string.ascii_letters+string.digits+string.punctuation)
+
+
+# 17. Decode webpage (Will try after learning)
+
+# 18. Cows & Bulls:
+# 4-digit number,
+# ask user to guess 4 digit number
+# Every digit user guessed correctly and in right position - give Cow.
+# If guessed correctly but in wrong place, give Bull.
+
+
+def cow_bull():
+    number = random.sample(nums, size)  # random return a list
+    number = str(random)
+    sums = 0
+    while sums != 4:
+        ask_num = input('Enter no: ')
+        cow = 0
+        bull = 0
+        for indexs, digit in enumerate(ask_num):   # 1 2 3 4
+            for indexxs, digits in enumerate(number):
+                if digit == digits and indexs == indexxs:
+                    cow += 1
+                elif digit == digits:
+                    bull += 1
+                else:
+                    pass
+                    # give input again
+        sums = cow + bull
+        print(f'{cow} Cows, {bull} Bulls')
+
+
+size = 4
+nums = range(10)
+cow_bull()  # [1, 2, 3, 4]
+
+# 19. Decode webpage (Will try after learning)
+
+
+# 20. Element searching (and binary search)
+
+number = [5, 3, 8, 5, 9, 16, 1]
+number.sort()
+ask = int(input("enter: "))
+if ask in number:
+    print("True")
+else:
+    print("False")
+
+
+# 21. Write to a file: (later)
+# 22. Read from a file: (later)
+# 23. Overlap file: (later)
+
+# 24. Draw a game:
+
+# 25. Guessing game 2. This time pc will guess your number
+
+print("Select a number from 0-10 in your mind")
+correct = False
+while correct != True:
+    num = range(11)
+    pc_guess = random.choice(num)
+    print(pc_guess)
+    correct_one = input('Too low, high or correct?  ')
+    if correct_one == 'too high':
+        pass
+    elif correct_one == 'too low':
+        pass
+    elif correct_one == 'correct':
+        print("guess done")
+        correct = True
+    else:
+        pass
+
+# 26, 27 tic tac game
+
+# 28. max of three w/o max()
+
+
+def maxxy(vara, varb, varc):
+    if vara > varb and vara > varc:
+        print('vara greatest', vara)
+    elif varb > vara and varb > varc:
+        print('varb greatest', varb)
+    elif varc > varb and varc > vara:
+        print('varc greatest', varc)
+    else:
+        pass
+
+
+maxxy(50, 8, 200)
+
+# 29. tic tac game (again!)
+
+# 30. pick word from random list  of words
+list_of_words = ['hello', 'sky', 'blue', 'garden', 'house']
+print(random.choice(list_of_words))
