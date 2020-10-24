@@ -50,3 +50,62 @@ if n > 1:
             break
     else:
         print('prime')
+
+
+
+# generate random nos :
+
+print(random.randint(1, 50))        # random nos from 1-50. 1 included.
+print(random.random())              # only from 0-1
+number = range(0, 90)
+names = ['dev', 'chupre']
+print(random.choice(names))
+
+# remove duplicates
+remove = [3, 6, 7, 8, 88, 5, 8, 2, 0, 2, 3]
+new_list = []
+
+for n in remove:
+    if n not in new_list:
+        new_list.append(n)
+print(new_list)
+
+
+# check if palindrome
+straight = 'ded'
+reverse = straight[::-1]
+if straight == reverse:
+    print("palin")
+else:
+    print("NO")
+
+# Greatest common divisor
+n1 = 12
+n2 = 24
+n1_div = []
+n2_div = []
+
+for n in range(1, n1+1):
+    if n1 % n == 0:
+        n1_div.append(n)
+max2 = max(n1_div)
+
+for x in range(1, n2+1):
+    if n2 % x == 0:
+        n2_div.append(x)
+max1 = max(n2_div)
+
+print(f'GCD: {min(max1, max2)}')
+
+# guessing game
+secret = 9
+guess_start = 1
+while guess_start < 4:
+    guess = int(input(">> "))
+    guess_start += 1
+    if guess == secret:
+        print("Correct")
+        break
+
+else:
+    print("failed")
