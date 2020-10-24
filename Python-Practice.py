@@ -184,3 +184,133 @@ for n in a:
     if n in b and n not in c:
         c.append(n)
 print(c)
+
+
+# 6. palindrome
+names = 'devved'
+revs = names[::-1]
+if names == revs:
+    print("pali")
+
+
+# 7. list comprehension. div by 2?
+a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+b = [n for n in a if n % 2 == 0]
+print(b)
+
+# 8. rock-paper-scissor
+# Rock beats scissors
+# Scissors beats paper
+# Paper beats rock
+player_one = 'scissor'
+player_two = 'rock'
+
+if player_one == 'rock' and player_two == 'scissor':
+    print('player_one wins')
+
+elif player_one == 'scissor' and player_two == 'rock':
+    print('player_two wins')
+
+elif player_one == 'scissor' and player_two == 'paper':
+    print('player_one wins')
+
+elif player_one == 'paper' and player_two == 'scissor':
+    print('player_two wins')
+
+elif player_one == 'paper' and player_two == 'rock':
+    print('player_one wins')
+
+elif player_one == 'rock' and player_two == 'paper':
+    print('player_two wins')
+
+
+# 9. guess game
+
+randoms = "10"
+exit = False
+chances = 0
+while exit == False:
+    guess = input("> ")
+    if guess == randoms:
+        chances += 1
+        print("Correct", chances)
+    elif guess == "quit":
+        chances += 1
+        exit = True
+        print("bye", chances)
+    else:
+        chances += 1
+        print('not correct', chances)
+
+
+# 10. DONE. (Same as above)
+
+# 11. prime no, but using functions.
+def primy(num):
+    for n in range(2, num):
+        if num % n == 0:
+            return n
+
+    print("prime")
+
+
+primy(11)
+
+
+# 12. first and last using func
+
+def new():
+    a = [5, 10, 15, 20, 25]
+    b = a[0], a[-1]
+    print(list(b))
+
+
+new()
+
+
+# 13. Fibonacci (recursive - ik!)
+
+def fib(n):
+    if n == 1 or n == 2:
+        return n
+    else:
+        return (fib(n-1)+fib(n-2))
+
+
+print(fib(8))
+
+
+# 14. List remove duplicates
+
+def remove_dups(take_list):
+    take_list = set(take_list)
+    new_one = list(take_list)
+    return new_one
+
+
+print(remove_dups([2, 4, 6, 11, 2, 4, 66, 99, 66]))
+
+# OR:
+
+
+def remove_dup(take_list):
+    new_list = []
+    for n in take_list:
+        if n not in new_list:
+            new_list.append(n)
+    print(new_list)
+
+
+remove_dup([2, 4, 6, 11, 2, 4, 66, 99, 66])
+
+# 15. Reverse word order
+
+ask_string = "hello guys my name is dev shah"
+ask_string = ask_string.split()
+new_str = []
+new_str.append(ask_string[::-1])
+print(new_str)
+# OR:
+ask_string = "hello guys my name is dev shah"
+new_str = ask_string.split()
+print(' '.join(new_str[::-1]))
