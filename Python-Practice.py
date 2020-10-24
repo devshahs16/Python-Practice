@@ -109,3 +109,78 @@ while guess_start < 4:
 
 else:
     print("failed")
+
+
+## Some more python practice:
+
+# https://www.practicepython.org/exercise/2014/01/29/01-character-input.html
+# PRACTICE:
+
+# 1. input, age, turn 100
+name = input("Enter name: ")
+age = int(input("Enter age: "))
+number = int(input("to print copies: "))
+current_year = 2020
+out = (100-age)
+year_turn = current_year+out
+print(f'Hi, {name}, you will turn 100 in the year {year_turn}!!' '\n' * number)
+
+
+# 2. odd/even
+nums = 5  # int (input("enter number: "))
+check = 25  # int (input("enter number: "))
+if nums % 4 == 0:
+    print(" multiple of 4")
+elif nums % 2 == 0:
+    print("even")
+else:
+    print("odd")
+
+
+if nums % check == 0:
+    print('divides')
+else:
+    print("NO. ")
+
+
+# 3.
+list_a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+# for n in list_a:
+#   if n < 5:
+#       list_b.append(n)
+# print(list_b)
+# OR : in one line - List Comprehension.
+list_b = []
+list_b = [n for n in list_a if n < 5]  # List comprehension
+print(list_b)
+
+number = 8  # int(input(":: "))
+lst_c = []
+# for x in list_a:
+#    if x < number:
+#        lst_c.append(x)
+# print(lst_c)
+# OR: list comprehension
+lst_c = [x for x in list_a if x < number]  # List comprehension
+print(lst_c)
+
+# 4. Divisors
+nos = 35  # int(input("give number: "))
+for n in range(1, nos):
+    if nos % n == 0:
+        print(n)
+
+# 5.
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+a_set = set(a)
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+b_set = set(b)
+c = a_set & b_set
+print(list(c))
+
+# OR:
+c = []
+for n in a:
+    if n in b and n not in c:
+        c.append(n)
+print(c)
